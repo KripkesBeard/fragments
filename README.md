@@ -1,4 +1,4 @@
-# Saturated
+# Fragments
 
 This is an exploration of formal semantics via functional programming techniques. 
 The goal is to create a Haskell library which serves as a basic framework for 
