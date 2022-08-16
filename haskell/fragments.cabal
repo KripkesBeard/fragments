@@ -1,0 +1,61 @@
+cabal-version:      2.4
+name:               fragments
+version:            0.1.0.0
+synopsis:           Formal Semantics via Functional Programming
+
+-- A longer description of the package.
+-- description:
+homepage:           kripkesbeard.github.io
+
+-- A URL where users can report bugs.
+-- bug-reports:
+license:            NONE
+author:             Peter Fortin
+maintainer:         kripkesbeard@gmail.com
+
+-- A copyright notice.
+-- copyright:
+category:           Semantics
+extra-source-files: CHANGELOG.md
+
+library
+    exposed-modules:  Semantics.Prelude
+                      Semantics.Fragment.CompSemFunPro.Full
+                      Semantics.Fragment.SemGenGram.Full
+                      Semantics.Fragment.IntenSem.Full
+                      Semantics.Fragment.InvFormSem.Full
+                      Semantics.Fragment.EnrichSem.Full
+                      Semantics.Fragment.Continuations.Full
+                      Semantics.Fragment.Assertion
+                      Semantics.Fragment.DynamicSem
+                      Semantics.Fragment.Implicature
+                      Semantics.Fragment.Presupposition
+                      Semantics.Functional.AlgebraicEffects
+                      Semantics.Functional.Optics
+                      Semantics.Functional.RecursionSchemes
+                      Semantics.Hyperintension.Aboutness
+                      Semantics.Hyperintension.HoTT
+                      Semantics.Hyperintension.ImpossibleWorlds
+                      Semantics.Hyperintension.Monadic
+                      Semantics.Hyperintension.StructuredProp
+                      Semantics.Hyperintension.TwoDimensionalSem
+                      Semantics.Logic.DirectRep
+                      Semantics.Logic.Domains
+                      Semantics.Logic.IndirectRep
+
+
+    -- Modules included in this library but not exported.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base ^>=4.14.3.0
+    hs-source-dirs:   lib
+    default-language: Haskell2010
+
+test-suite fragments-test
+    default-language: Haskell2010
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          MyLibTest.hs
+    build-depends:    base ^>=4.14.3.0
