@@ -25,9 +25,9 @@ See lit.md for a summary of the relevant literature.
 | Module | Description |
 | ------ | ----------- |
 | Logic | The main logics of the project |
-| Fragments | Formalizations of fragments/systems of semantics from various books |
-| Hyperintensions | Explorations of various approaches to hyperintensionality |
+| Fragment | Formalizations of fragments/systems of semantics from various books |
+| Hyperintension | Explorations of various approaches to hyperintensionality |
 | Functional | Explorations of ideas from functional programming such as recursion schemes to semantics |
 | Dependent | Use of dependent type theory and Agda to develop fragments |
-| Foundations | Proofs and formalizations in Agda of the metatheory for these systems |
+| Foundation | Proofs and formalizations in Agda of the metatheory for these systems |
 
