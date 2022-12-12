@@ -19,29 +19,12 @@ category:           Semantics
 extra-source-files: CHANGELOG.md
 
 library
-    exposed-modules:  Semantics.Prelude
-                      Semantics.Fragment.CompSemFunPro.Full
-                      Semantics.Fragment.SemGenGram.Full
-                      Semantics.Fragment.IntenSem.Full
-                      Semantics.Fragment.InvFormSem.Full
-                      Semantics.Fragment.EnrichSem.Full
-                      Semantics.Fragment.Continuations.Full
-                      Semantics.Fragment.Assertion
-                      Semantics.Fragment.DynamicSem
-                      Semantics.Fragment.Implicature
-                      Semantics.Fragment.Presupposition
-                      Semantics.Functional.AlgebraicEffects
-                      Semantics.Functional.Optics
-                      Semantics.Functional.RecursionSchemes
-                      Semantics.Hyperintension.Aboutness
-                      Semantics.Hyperintension.HoTT
-                      Semantics.Hyperintension.ImpossibleWorlds
-                      Semantics.Hyperintension.Monadic
-                      Semantics.Hyperintension.StructuredProp
-                      Semantics.Hyperintension.TwoDimensionalSem
-                      Semantics.Logic.DirectRep
-                      Semantics.Logic.Domains
-                      Semantics.Logic.IndirectRep
+    exposed-modules:  Semantics.Logic.Propositional
+                      Semantics.Logic.Quantificational
+                      --Semantics.Logic.HigherTypeTheory
+                      --Semantics.Logic.ModalPropositional
+                      --Semantics.Logic.ModalQuantificational
+                      --Semantics.Logic.IntensionalTypeTheory
 
 
     -- Modules included in this library but not exported.
