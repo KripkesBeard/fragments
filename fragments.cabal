@@ -21,6 +21,7 @@ extra-source-files: CHANGELOG.md
 library
     exposed-modules:  Semantics.Logic.PropositionalSyntax
                       Semantics.Logic.PropositionalSemantics
+                      Semantics.Logic.PropositionalInteractive
                       Semantics.Logic.Propositional
                       Semantics.Logic.QuantificationalSyntax
                       Semantics.Logic.QuantificationalSemantics

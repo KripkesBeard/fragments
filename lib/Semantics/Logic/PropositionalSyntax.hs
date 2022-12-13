@@ -22,3 +22,4 @@ instance Show PropositionalFormula where
 
 -- TODO 
 -- Implement a parser to use as instance for Read
+-- then once I do, export another function that's just a synonym for read which is the syntax equivalent of exporting makeInterpretation
