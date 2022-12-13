@@ -19,13 +19,14 @@ category:           Semantics
 extra-source-files: CHANGELOG.md
 
 library
-    exposed-modules:  Semantics.Logic.PropositionalSyntax
+    exposed-modules:  Semantics.Logic.Propositional
+                      Semantics.Logic.PropositionalSyntax
                       Semantics.Logic.PropositionalSemantics
                       Semantics.Logic.PropositionalInteractive
-                      Semantics.Logic.Propositional
+                      Semantics.Logic.Quantificational
                       Semantics.Logic.QuantificationalSyntax
                       Semantics.Logic.QuantificationalSemantics
-                      Semantics.Logic.Quantificational
+                      Semantics.Logic.QuantificationalInteractive
                       --Semantics.Logic.HigherTypeTheory
                       --Semantics.Logic.ModalPropositional
                       --Semantics.Logic.ModalQuantificational
