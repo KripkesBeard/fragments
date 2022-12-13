@@ -1,0 +1,1 @@
+module Semantics.Logic.QuantificationalSyntax where

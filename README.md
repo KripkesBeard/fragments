@@ -16,7 +16,8 @@ I also want to formalize the meta theory in Agda, which will allow for correctne
 proofs, as well as being able to work with the meta theory in an explicit way. 
 Agda also offers the opportunity to use an intuitionistic 
 type theory based approach to the formalization process as opposed to the more 
-traditional Montagovian approach.
+traditional Montagovian approach. The Agda stuff will exist in its own
+library.
 
 See lit.md for a summary of the relevant literature.
 

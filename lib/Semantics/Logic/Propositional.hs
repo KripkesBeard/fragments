@@ -1,4 +1,22 @@
-module Semantics.Logic.Propositional where
+module Semantics.Logic.Propositional 
+    ( PropositionalVariable
+    , PropositionalFormula (..)
+    , Interpretation
+    , makeInterpretation
+    , evaluateAt
+    ) where
 
-import Data.Text (Text)
-import qualified Data.Text as T
+import Semantics.Logic.PropositionalSyntax
+    ( PropositionalVariable
+    , PropositionalFormula (..)
+    )
+
+import Semantics.Logic.PropositionalSemantics
+  ( Interpretation  
+  , makeInterpretation
+  , evaluateAt
+  )
+
+import Semantics.Logic.PropositionalInteractive 
+  (
+  )
