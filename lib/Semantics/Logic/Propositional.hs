@@ -1,6 +1,9 @@
 module Semantics.Logic.Propositional 
     ( PropositionalVariable
     , PropositionalFormula (..)
+    , (/\)
+    , (\/)
+    , (~>)
     , Interpretation
     , makeInterpretation
     , evaluateAt
@@ -9,6 +12,9 @@ module Semantics.Logic.Propositional
 import Semantics.Logic.PropositionalSyntax
     ( PropositionalVariable
     , PropositionalFormula (..)
+    , (/\)
+    , (\/)
+    , (~>)
     )
 
 import Semantics.Logic.PropositionalSemantics
