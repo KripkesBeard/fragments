@@ -20,16 +20,22 @@ extra-source-files: CHANGELOG.md
 
 library
     exposed-modules:  Semantics.Logic.Propositional
-                      Semantics.Logic.PropositionalSyntax
-                      Semantics.Logic.PropositionalSemantics
-                      Semantics.Logic.PropositionalInteractive
+                      Semantics.Logic.Propositional.Syntax
+                      Semantics.Logic.Propositional.Semantics
+                      Semantics.Logic.Propositional.Interactive
+                      Semantics.Logic.PropositionalModal
+                      Semantics.Logic.PropositionalModal.Syntax
+                      Semantics.Logic.PropositionalModal.Semantics
+                      Semantics.Logic.PropositionalModal.Interactive
                       Semantics.Logic.Quantificational
-                      Semantics.Logic.QuantificationalSyntax
-                      Semantics.Logic.QuantificationalSemantics
-                      Semantics.Logic.QuantificationalInteractive
-                      --Semantics.Logic.HigherTypeTheory
-                      --Semantics.Logic.ModalPropositional
-                      --Semantics.Logic.ModalQuantificational
+                      Semantics.Logic.Quantificational.Syntax
+                      Semantics.Logic.Quantificational.Semantics
+                      Semantics.Logic.Quantificational.Interactive
+                      --Semantics.Logic.QuantificationalModal
+                      --Semantics.Logic.QuantificationalModal.Syntax
+                      --Semantics.Logic.QuantificationalModal.Semantics
+                      --Semantics.Logic.QuantificationalModal.Interactive
+                      --Semantics.Logic.TheoryOfTypes
                       --Semantics.Logic.IntensionalTypeTheory
 
 
@@ -39,11 +45,14 @@ library
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
     build-depends:    base ^>=4.14.3.0
-                    , text ^>=1.2.4.1
-                    , containers ^>=0.6.5.1
+                    , text 
+                    , containers 
+                    , parsec 
+                    , mtl 
                       
     hs-source-dirs:   lib
     default-language: Haskell2010
+    ghc-options: -Wall
 
 test-suite fragments-test
     default-language: Haskell2010
