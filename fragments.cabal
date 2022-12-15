@@ -4,8 +4,7 @@ version:            0.1.0.0
 synopsis:           Formal Semantics via Functional Programming
 
 -- A longer description of the package.
-description: This library contains implementations of systems of mathematical and philosophical logic 
-             to be used as the formal semantics of natural languages. 
+-- description:
 
 
 homepage:           kripkesbeard.github.io
@@ -41,8 +40,8 @@ library
                       --Semantics.Logic.QuantificationalModal.Syntax
                       --Semantics.Logic.QuantificationalModal.Semantics
                       --Semantics.Logic.QuantificationalModal.Interactive
-                      --Semantics.Logic.TypeTheory
-                      --Semantics.Logic.TypeTheoryModal
+                      --Semantics.Logic.TypeTheoretic
+                      --Semantics.Logic.TypeTheoreticModal
 
 
     -- Modules included in this library but not exported.
