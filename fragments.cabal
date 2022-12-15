@@ -4,7 +4,10 @@ version:            0.1.0.0
 synopsis:           Formal Semantics via Functional Programming
 
 -- A longer description of the package.
--- description:
+description: This library contains implementations of systems of mathematical and philosophical logic 
+             to be used as the formal semantics of natural languages. 
+
+
 homepage:           kripkesbeard.github.io
 
 -- A URL where users can report bugs.
@@ -22,21 +25,24 @@ library
     exposed-modules:  Semantics.Logic.Propositional
                       Semantics.Logic.Propositional.Syntax
                       Semantics.Logic.Propositional.Semantics
-                      Semantics.Logic.Propositional.Interactive
+                      Semantics.Logic.Propositional.Parsing
+                      Semantics.Logic.Propositional.PrettyPrinting
                       Semantics.Logic.PropositionalModal
                       Semantics.Logic.PropositionalModal.Syntax
                       Semantics.Logic.PropositionalModal.Semantics
-                      Semantics.Logic.PropositionalModal.Interactive
+                      Semantics.Logic.PropositionalModal.Parsing
+                      Semantics.Logic.PropositionalModal.PrettyPrinting
                       Semantics.Logic.Quantificational
                       Semantics.Logic.Quantificational.Syntax
                       Semantics.Logic.Quantificational.Semantics
-                      Semantics.Logic.Quantificational.Interactive
+                      Semantics.Logic.Quantificational.Parsing
+                      Semantics.Logic.Quantificational.PrettyPrinting
                       --Semantics.Logic.QuantificationalModal
                       --Semantics.Logic.QuantificationalModal.Syntax
                       --Semantics.Logic.QuantificationalModal.Semantics
                       --Semantics.Logic.QuantificationalModal.Interactive
-                      --Semantics.Logic.TheoryOfTypes
-                      --Semantics.Logic.IntensionalTypeTheory
+                      --Semantics.Logic.TypeTheory
+                      --Semantics.Logic.TypeTheoryModal
 
 
     -- Modules included in this library but not exported.

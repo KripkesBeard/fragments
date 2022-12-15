@@ -1,1 +1,0 @@
-module Semantics.Logic.PropositionalModal.Interactive where

@@ -1,12 +1,21 @@
+{-|
+This is the "internal" module for propositional modal logic syntax. See the main Semantics.Logic.PropositionalModal module 
+for an explanation of what is going on.
+-}
+
+
 module Semantics.Logic.PropositionalModal.Syntax
-  ( PropositionalVariable
+  ( -- * Abstract Syntax
+    PropositionalVariable
   , PropositionalModalFormula (..)
   ) where
 
-type PropositionalVariable = String
+-- | A PropositionalVariable is a point.
+type PropositionalVariable = Int
 
+-- | A propositional modal formula is a well formed abstract syntax tree encoding its logical form.
 data PropositionalModalFormula
-    = Atomic      !PropositionalVariable
+    = Atomic      !PropositionalVariable 
     | Negation    !PropositionalModalFormula
     | Conjunction !PropositionalModalFormula !PropositionalModalFormula
     | Disjunction !PropositionalModalFormula !PropositionalModalFormula
