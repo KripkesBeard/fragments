@@ -24,22 +24,15 @@ library
     exposed-modules:  Semantics.Logic.Propositional
                       Semantics.Logic.Propositional.Syntax
                       Semantics.Logic.Propositional.Semantics
-                      Semantics.Logic.Propositional.Parsing
-                      Semantics.Logic.Propositional.PrettyPrinting
                       Semantics.Logic.PropositionalModal
                       Semantics.Logic.PropositionalModal.Syntax
                       Semantics.Logic.PropositionalModal.Semantics
-                      Semantics.Logic.PropositionalModal.Parsing
-                      Semantics.Logic.PropositionalModal.PrettyPrinting
                       Semantics.Logic.Quantificational
                       Semantics.Logic.Quantificational.Syntax
                       Semantics.Logic.Quantificational.Semantics
-                      Semantics.Logic.Quantificational.Parsing
-                      Semantics.Logic.Quantificational.PrettyPrinting
                       --Semantics.Logic.QuantificationalModal
                       --Semantics.Logic.QuantificationalModal.Syntax
                       --Semantics.Logic.QuantificationalModal.Semantics
-                      --Semantics.Logic.QuantificationalModal.Interactive
                       --Semantics.Logic.TypeTheoretic
                       --Semantics.Logic.TypeTheoreticModal
 
@@ -50,9 +43,9 @@ library
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
     build-depends:    base ^>=4.14.3.0
-                    , text 
                     , containers 
                     , parsec 
+                    , parsec-numbers
                     , mtl 
                       
     hs-source-dirs:   lib

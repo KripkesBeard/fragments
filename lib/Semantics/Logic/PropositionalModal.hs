@@ -11,10 +11,11 @@ of propositional semantics and seems utterly natural in light of the concept of 
 == The Syntax of Propositional Modal Logic
 
 The only change we need to make to the syntax of propositional logic is the addition of the two new operators which, similarly to the
-negation operator, take one propositional formula as an argument. The recursive grammar for a propositional modal formula \(\Phi\) is:
+negation operator, take one propositional formula as an argument. The recursive grammar for a propositional modal formula is:
 
 \[ 
-\Phi := v \: | \: \lnot \: \Phi \: | \: \Phi \land \Phi \: | \: \Phi \lor \Phi \: | \: \Phi \rightarrow \Phi \: | \: \Box \: \Phi \: | \: \Diamond \: \Phi  
+\Phi := v \: | \: \lnot \: \Phi \: | \: \Phi \land \Phi \: | 
+\: \Phi \lor \Phi \: | \: \Phi \rightarrow \Phi \: | \: \Box \: \Phi \: | \: \Diamond \: \Phi  
 \]
 
 where once again \(v\) is a propositional variable.
@@ -53,42 +54,43 @@ needs to also be an input into our evaluation function.
 The truth definition for a propositional modal formula in a Kripke model \(M = \langle W, R, I \rangle\) at a world \(w \in W\) is the following:
 
 \[
-\ulcorner\lnot \: \Phi\urcorner \: \textrm{is true at} \: w \: \textrm{iff} \: \ulcorner\Phi\urcorner \: \textrm{is false}
+\ulcorner\lnot \: \phi\urcorner \: \textrm{is true at} \: w \: \textrm{iff} \: \ulcorner\phi\urcorner \: \textrm{is false}
 \]
 
 \[
-\ulcorner\Phi \: \land \: \Psi\urcorner \: \textrm{is true at} \: w \: \textrm{iff}  \: \ulcorner\Phi\urcorner \: \textrm{is true and} \: \ulcorner\Psi\urcorner \: \textrm{is true}
+\ulcorner\phi \: \land \: \psi\urcorner \: \textrm{is true at} \: w \: \textrm{iff}  \: \ulcorner\phi\urcorner \: \textrm{is true and} \: \ulcorner\psi\urcorner \: \textrm{is true}
 \]
 
 \[
-\ulcorner\Phi \: \lor \: \Psi\urcorner \: \textrm{is true at} \: w \: \textrm{iff}  \: \ulcorner\Phi\urcorner \: \textrm{is true or} \: \ulcorner\Psi\urcorner \: \textrm{is true}
+\ulcorner\phi \: \lor \: \psi\urcorner \: \textrm{is true at} \: w \: \textrm{iff}  \: \ulcorner\phi\urcorner \: \textrm{is true or} \: \ulcorner\psi\urcorner \: \textrm{is true}
 \]
 
 \[
-\ulcorner\Phi \: \rightarrow \: \Psi\urcorner \: \textrm{is true at} \: w \: \textrm{iff whenever} \: \ulcorner\Phi\urcorner \: \textrm{is true, then} \: \ulcorner\Psi\urcorner \: 
-\textrm{is not false}
+\ulcorner\phi \: \rightarrow \: \psi\urcorner \: \textrm{is true at} \: w \: \textrm{iff either} \: \ulcorner\lnot \: \phi\urcorner  \: 
+\textrm{is true or} \: \ulcorner\psi\urcorner \: \textrm{is true}
 \]
 
 \[
-\ulcorner\Box \: \Phi\urcorner \: \textrm{is true at} \: w \: \textrm{iff}  \: \forall w' \in W \: \textrm{such that} \: wRw', \: \ulcorner\Phi\urcorner \: \textrm{is true at} \: w'
+\ulcorner\Box \: \phi\urcorner \: \textrm{is true at} \: w \: \textrm{iff}  \: \forall w' \in W \: \textrm{such that} \: wRw', \: \ulcorner\phi\urcorner \: \textrm{is true at} \: w'
 \]
 
 \[
-\ulcorner\Diamond \: \Phi\urcorner \: \textrm{is true at} \: w \: \textrm{iff}  \: \exists w' \in W \: \textrm{such that} \: wRw' \: \textrm{and} \: \ulcorner\Phi\urcorner \: 
+\ulcorner\Diamond \: \phi\urcorner \: \textrm{is true at} \: w \: \textrm{iff}  \: \exists w' \in W \: \textrm{such that} \: wRw' \: \textrm{and} \: \ulcorner\phi\urcorner \: 
 \textrm{is true at} \: w'
 \]
 
-What the necessity and possibility clauses say intuitively is that in order for a statement to be necessary at a possible world, it needs to be true at every world accessible by
+What the necessity and possibility clauses say is that in order for a statement to be necessary at a possible world, it needs to be true at every world accessible by
 that world. Similarly, a statement is possible at a world if there is at least one world accessed by it in which the statement is true.
 
 One interesting thing to note about these definitions for necessity and possibility is that if we have a world which does not access any other world, then every 
 proposition is necessarily true and every proposition is possibly false, in that world. The reason is because since the set of worlds accessed by the world is empty,
 the condition for the necessity operator is vacuously true, whereas the condition for the possibility operator has to be false because there does not exist a single
-accessed world where the proposition is true. In most philosophical applications, it seems natural for each world to access itself, and so that situation would never arise.
-However, mathematically there's nothing that says the accessibility relation needs to be constrained that way.
+accessed world where the proposition is true. In most philosophical applications, it seems natural for each world to at least access itself, and so that situation would never arise.
+mathematically, however, there's nothing that says the accessibility relation needs to be constrained in any way.
 
 It may now be easy to see why propositional modal semantics are a generalization of propositional semantics. Each world is its own propositional model, and the accessibility 
-relation allows us to move from one of those models to the next. The truth of a necessity or a possibility is then evaluated by quantifying over each of those accessible worlds.
+relation allows us to move from one of those models to the next. The truth of a necessity or a possibility is then evaluated by quantifying over the model 
+at each of those accessible worlds.
 -}
 
 module Semantics.Logic.PropositionalModal 

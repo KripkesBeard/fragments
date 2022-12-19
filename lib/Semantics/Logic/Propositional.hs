@@ -13,7 +13,7 @@ The syntax of propositional logic describes how to write down formulae of the la
 
 We start with the notion of a propositional sentence letter or variable, often denoted by \(\textrm{A,B,C,...}\). Propositional variables represent the atomic units of 
 the language which cannot be further analyzed. Propositional formulae are built up out of propositional letters and other propositional formulae via the logical operations 
-of negation, conjunction, disjunction, and implication. That is, a syntactically valid propositional formula \(\Phi\) is recursively constructed according to the grammar: 
+of negation, conjunction, disjunction, and implication. That is, a syntactically valid propositional formula is recursively constructed according to the grammar: 
 
 \[ 
 \Phi := v \: | \: \lnot \: \Phi \: | \: \Phi \land \Phi \: | \: \Phi \lor \Phi \: | \: \Phi \rightarrow \Phi \: 
@@ -32,30 +32,38 @@ language. For propositional logic, an interpretation \(I\) is an assignment of t
 out of the connectives with a recursive definition which matches the intuitive meaning of each connective:
 
 \[
-\ulcorner\lnot \: \Phi\urcorner \: \textrm{is true iff} \: \ulcorner\Phi\urcorner \: \textrm{is false}
+\ulcorner\lnot \: \phi\urcorner \: \textrm{is true iff} \: \ulcorner\phi\urcorner \: \textrm{is false}
 \]
 
 \[
-\ulcorner\Phi \: \land \: \Psi\urcorner \: \textrm{is true iff} \: \ulcorner\Phi\urcorner \: \textrm{is true and} \: \ulcorner\Psi\urcorner \: \textrm{is true}
+\ulcorner\phi \: \land \: \psi\urcorner \: \textrm{is true iff} \: \ulcorner\phi\urcorner \: \textrm{is true and} \: \ulcorner\psi\urcorner \: \textrm{is true}
 \]
 
 \[
-\ulcorner\Phi \: \lor \: \Psi\urcorner \: \textrm{is true iff} \: \ulcorner\Phi\urcorner \: \textrm{is true or} \: \ulcorner\Psi\urcorner \: \textrm{is true}
+\ulcorner\phi \: \lor \: \psi\urcorner \: \textrm{is true iff} \: \ulcorner\phi\urcorner \: \textrm{is true or} \: \ulcorner\psi\urcorner \: \textrm{is true}
 \]
 
 \[
-\ulcorner\Phi \: \rightarrow \: \Psi\urcorner \: \textrm{is true iff whenever} \: \ulcorner\Phi\urcorner \: \textrm{is true, then} \: \ulcorner\Psi\urcorner \: \textrm{is not false}
+\ulcorner\phi \: \rightarrow \: \psi\urcorner \: \textrm{is true iff either} \: \ulcorner\lnot \: \phi\urcorner  \: 
+\textrm{is true or} \: \ulcorner\psi\urcorner \: \textrm{is true}
 \]
 
-where \(\Phi\) and \(\Psi\) are propositional formulae, and the corner quotes \(\ulcorner\cdot\urcorner\) represent quasi-quotation. 
+where \(\phi\) and \(\psi\) are propositional formulae, and the corner quotes \(\ulcorner\cdot\urcorner\) represent quasi-quotation. 
 
-What this definition means is that if we have some interpretation \(I\) and some propositional formula \(\Phi\), we can evaluate the formula and find its truth value
+What this definition means is that if we have some interpretation \(I\) and some propositional formula \(\phi\), we can evaluate the formula and find its truth value
 by recursively applying these rules until we reach the propositional variables at the ends of the tree and then use the truth value of those variables according to \(I\) to work our way 
 back up the tree combining to a final value.
 
 A more computer science-y way of thinking about an interpretation which can be very helpful is to think of it as an enviroment which keeps track of the value of every free variable in 
 its scope. Then, the evaluation function just looks up what those values are and uses them as well as the recursive truth rules for the connectives to build the final truth value of the 
 sentence.
+
+There is a second way of creating an interpretation function, which is actually more amendable to this kind of formalization. Instead of having an interpretation be a function 
+which takes any propositional variable and returns a truth value, we instead define it as a single set of propositional variables. A propositional variable is true iff if it 
+appears in the set and false otherwise. This is nicer for this kind of implementation because it means you only have to specify which atomic statements are true and not 
+which are true and which are false. Everything not specified will implicitly be false, and the evaluation function reduces to looking up whether or not a propositional variable 
+is in a set. The extension of this to the environment analogy is that we are still keeping track of local variables, but if a value doesn't appear in the symbol table, 
+then it is given a default value (in this case, False).
 -}
 
 module Semantics.Logic.Propositional 

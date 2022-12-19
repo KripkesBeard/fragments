@@ -11,20 +11,20 @@ module Semantics.Logic.Propositional.Semantics
       evaluateIn
     ) where
 
-import Data.Map.Strict (Map)
-import qualified Data.Map.Strict as Map
+import Data.Set (Set)
+import qualified Data.Set as Set
 
 import Semantics.Logic.Propositional.Syntax 
     ( PropositionalVariable
     , PropositionalFormula (..) 
     )
 
--- | An interpretation for a boolean logic is a mapping from propositional variables to boolean values.
-type Interpretation = Map PropositionalVariable Bool
+-- | An interpretation for a boolean logic is the set of the propositional variables which are true.
+type Interpretation = Set PropositionalVariable
 
 -- | Create an interpretation
-createInterpretation :: [(PropositionalVariable, Bool)] -> Interpretation
-createInterpretation = Map.fromList
+createInterpretation :: [PropositionalVariable] -> Interpretation
+createInterpretation = Set.fromList
 
 
 -- | Evaluates a propositional formula in an interpretation.
@@ -32,18 +32,18 @@ createInterpretation = Map.fromList
 -- Let i be an interpretation such that 
 --
 -- @
--- i 1 -> True
--- i 2 -> False
--- i 3 -> True
+-- i "a" -> True
+-- i "b" -> False
+-- i "c" -> True
 -- @
 --
 -- Then
 -- 
--- >>> evaluateIn (Negation (Implication (Disjunction (Atomic 1) (Conjunction (Negation (Atomic 2)) (Atomic 3))) (Atomic 2))) i
+-- >>> evaluateIn (Negation (Implication (Disjunction (Atomic "a") (Conjunction (Negation (Atomic "b")) (Atomic "c"))) (Atomic "b"))) i
 -- True
 --
 evaluateIn :: PropositionalFormula -> Interpretation -> Bool
-evaluateIn (Atomic p)        i = i Map.! p
+evaluateIn (Atomic p)        i = p `Set.member` i
 evaluateIn (Negation p)      i = not (evaluateIn p i)
 evaluateIn (Conjunction p q) i = evaluateIn p i && evaluateIn q i
 evaluateIn (Disjunction p q) i = evaluateIn p i || evaluateIn q i

@@ -38,6 +38,7 @@ import Semantics.Logic.PropositionalModal.Syntax
   , PropositionalModalFormula (..)
   )
 
+
 -- | A world is a distinct point with no interal structure.
 type World = Int
 
@@ -64,6 +65,7 @@ type KripkeFrame = (Set World, AccessibilityRelation)
 -- | Create a Kripke frame.
 createKripkeFrame :: Set World -> AccessibilityRelation -> KripkeFrame
 createKripkeFrame = (,)
+
 
 -- | A set of propositions true in a world.
 type TruePropositions = Set PropositionalVariable
@@ -102,9 +104,9 @@ createKripkeModel = (,)
 -- and an interpretation which assigns 
 -- 
 -- @
--- 1    -> w
--- 1, 2 -> w'
--- 2, 3 -> w''
+-- "a"      -> w
+-- "a", "b" -> w'
+-- "b", "c" -> w''
 -- @
 -- 
 --
