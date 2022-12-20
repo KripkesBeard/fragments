@@ -70,7 +70,7 @@ createKripkeFrame = (,)
 -- | A set of propositions true in a world.
 type TruePropositions = Set PropositionalVariable
 
--- | Create a set of true propositions
+-- | Create a set of true propositions.
 createTruePropositions :: [PropositionalVariable] -> TruePropositions
 createTruePropositions = Set.fromList 
 
@@ -78,12 +78,12 @@ createTruePropositions = Set.fromList
 -- | An interpretation is a mapping from a world to the set of propositions true in that world.
 type Interpretation = Map World TruePropositions
 
--- | Create an interpretation
+-- | Create an interpretation.
 createInterpretation :: [(World, TruePropositions)] -> Interpretation
 createInterpretation = Map.fromList
 
 
--- | A Kripke Model is a pair of a Kripke frame and an interpretation
+-- | A Kripke Model is a pair of a Kripke frame and an interpretation.
 type KripkeModel = (KripkeFrame, Interpretation)
 
 -- | Create a Kripke model.
@@ -91,7 +91,7 @@ createKripkeModel :: KripkeFrame -> Interpretation -> KripkeModel
 createKripkeModel = (,)
 
 
--- | Evaluates the truth of a formula at a world according to a Kripke model.
+-- | Evaluate the truth of a formula at a world according to a Kripke model.
 --
 -- Let km be a Kripke model with worlds w, w', and w'', an accessibility relation
 --

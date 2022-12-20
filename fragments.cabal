@@ -4,8 +4,21 @@ version:            0.1.0.0
 synopsis:           Formal Semantics via Functional Programming
 
 -- A longer description of the package.
--- description:
-
+description:  . 
+                This library is an exploration of formal semantics via functional programming. 
+                It contains a framework of foundational logics in which to implement and test
+                different ideas in natural language semantics, especially those involving functional 
+                programming techniques and tools.
+              . 
+                The Semantics.Logic modules contain the foundational logics of the system. 
+              . 
+                The Semantics.Fragments modules contain implementations of Montague style natural language semantics. 
+              .  
+                The Semantics.Hyperintensional contains experiments with hyperintensional logics to model 
+                propositional attitude reports and logical necessity in natural language. The 
+              . 
+                The Semantics.Functional modules contain experiments using techniques like recursion schemes and optics
+                to model natural language phenomena.
 
 homepage:           kripkesbeard.github.io
 

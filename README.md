@@ -29,6 +29,3 @@ See lit.md for a summary of the relevant literature.
 | Fragment | Formalizations of fragments/systems of semantics from various books |
 | Hyperintension | Explorations of various approaches to hyperintensionality |
 | Functional | Explorations of ideas from functional programming such as recursion schemes to semantics |
-| Dependent | Use of dependent type theory and Agda to develop fragments |
-| Foundation | Proofs and formalizations in Agda of the metatheory for these systems |
-

@@ -9,7 +9,7 @@ module Semantics.Logic.Propositional.Syntax
     , PropositionalFormula (..)
     ) where
 
--- | A propositional variable is a name
+-- | A propositional variable is a name.
 type PropositionalVariable = String
 
 -- | A propositional formula is a well formed abstract syntax tree encoding its logical form.
@@ -21,6 +21,7 @@ data PropositionalFormula
     | Implication PropositionalFormula PropositionalFormula
     deriving (Eq, Show, Read)
 
+{-
 toString :: PropositionalFormula -> String
 toString (Atomic p)             = show p
 toString (Negation (Atomic p))  = "~" <> show p
@@ -31,3 +32,4 @@ toString (Implication p q)      =  "(" <> toString p <> " => "  <> toString q <>
 
 prettyPrint :: PropositionalFormula -> IO ()
 prettyPrint = putStrLn . toString
+-}

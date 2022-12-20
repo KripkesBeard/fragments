@@ -5,6 +5,7 @@ for an explanation of what is going on.
 
 module Semantics.Logic.Propositional.Semantics
     ( -- * Model Structure
+      -- ** Interpretation
       Interpretation
     , createInterpretation
     , -- * Evaluation
@@ -22,12 +23,12 @@ import Semantics.Logic.Propositional.Syntax
 -- | An interpretation for a boolean logic is the set of the propositional variables which are true.
 type Interpretation = Set PropositionalVariable
 
--- | Create an interpretation
+-- | Create an interpretation.
 createInterpretation :: [PropositionalVariable] -> Interpretation
 createInterpretation = Set.fromList
 
 
--- | Evaluates a propositional formula in an interpretation.
+-- | Evaluate a propositional formula in an interpretation.
 --
 -- Let i be an interpretation such that 
 --

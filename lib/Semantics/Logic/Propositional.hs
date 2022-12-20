@@ -73,6 +73,7 @@ module Semantics.Logic.Propositional
     , PropositionalFormula (..)
     , -- * Semantics
       -- ** Model Structure
+      -- *** Interpretation
       Interpretation
     , createInterpretation
     , -- ** Evaluation
