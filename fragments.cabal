@@ -17,7 +17,7 @@ description:  .
                 The Semantics.Hyperintensional contains experiments with hyperintensional logics to model 
                 propositional attitude reports and logical necessity in natural language. The 
               . 
-                The Semantics.Functional modules contain experiments using techniques like recursion schemes and optics
+                The Semantics.Functional modules contain experiments using techniques like monads, recursion schemes, and optics
                 to model natural language phenomena.
 
 homepage:           kripkesbeard.github.io

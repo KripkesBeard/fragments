@@ -36,7 +36,7 @@ createDomain = Set.fromList
 type Relations = Map String (Set [QuantificationalTerm])
 
 -- | Create a collection of relations.
-createRelations:: [(String, [QuantificationalTerm])] -> Map String [QuantificationalTerm]
+createRelations:: [(String, Set [QuantificationalTerm])] -> Relations
 createRelations = Map.fromList
 
 

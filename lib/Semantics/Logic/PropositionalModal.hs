@@ -54,28 +54,32 @@ needs to also be an input into our evaluation function.
 The truth definition for a propositional modal formula in a Kripke model \(M = \langle W, R, I \rangle\) at a world \(w \in W\) is the following:
 
 \[
-\ulcorner\lnot \: \phi\urcorner \: \textrm{is true at} \: w \: \textrm{iff} \: \ulcorner\phi\urcorner \: \textrm{is false}
+\textrm{An atomic formula} \:\ulcorner\phi\urcorner \: \textrm{is true at} \: w \: \textrm{iff} \: I \: \textrm{assigns} \: \ulcorner\phi\urcorner \: \textrm{true at} \: w
 \]
 
 \[
-\ulcorner\phi \: \land \: \psi\urcorner \: \textrm{is true at} \: w \: \textrm{iff}  \: \ulcorner\phi\urcorner \: \textrm{is true and} \: \ulcorner\psi\urcorner \: \textrm{is true}
+\ulcorner\lnot \: \phi\urcorner \: \textrm{is true at} \: w \: \textrm{iff} \: \ulcorner\phi\urcorner \: \textrm{is false at} \: w
 \]
 
 \[
-\ulcorner\phi \: \lor \: \psi\urcorner \: \textrm{is true at} \: w \: \textrm{iff}  \: \ulcorner\phi\urcorner \: \textrm{is true or} \: \ulcorner\psi\urcorner \: \textrm{is true}
+\ulcorner\phi \: \land \: \psi\urcorner \: \textrm{is true at} \: w \: \textrm{iff}  \: \ulcorner\phi\urcorner \: \textrm{is true and} \: \ulcorner\psi\urcorner \: \textrm{is true at } \: w
+\]
+
+\[
+\ulcorner\phi \: \lor \: \psi\urcorner \: \textrm{is true at} \: w \: \textrm{iff}  \: \ulcorner\phi\urcorner \: \textrm{is true or} \: \ulcorner\psi\urcorner \: \textrm{is true at} \: w
 \]
 
 \[
 \ulcorner\phi \: \rightarrow \: \psi\urcorner \: \textrm{is true at} \: w \: \textrm{iff either} \: \ulcorner\lnot \: \phi\urcorner  \: 
-\textrm{is true or} \: \ulcorner\psi\urcorner \: \textrm{is true}
+\textrm{is true or} \: \ulcorner\psi\urcorner \: \textrm{is true at } \: w
 \]
 
 \[
-\ulcorner\Box \: \phi\urcorner \: \textrm{is true at} \: w \: \textrm{iff}  \: \forall w' \in W \: \textrm{such that} \: wRw', \: \ulcorner\phi\urcorner \: \textrm{is true at} \: w'
+\ulcorner\Box \: \phi\urcorner \: \textrm{is true at} \: w \: \textrm{iff for all}  \: w' \in W \: \textrm{such that} \: wRw', \: \ulcorner\phi\urcorner \: \textrm{is true at} \: w'
 \]
 
 \[
-\ulcorner\Diamond \: \phi\urcorner \: \textrm{is true at} \: w \: \textrm{iff}  \: \exists w' \in W \: \textrm{such that} \: wRw' \: \textrm{and} \: \ulcorner\phi\urcorner \: 
+\ulcorner\Diamond \: \phi\urcorner \: \textrm{is true at} \: w \: \textrm{iff there exists a}  \: w' \in W \: \textrm{such that} \: wRw' \: \textrm{and} \: \ulcorner\phi\urcorner \: 
 \textrm{is true at} \: w'
 \]
 

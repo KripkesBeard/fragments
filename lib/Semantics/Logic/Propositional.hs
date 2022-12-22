@@ -1,6 +1,4 @@
 {-|
-Module : Semantics.Logic.Propositional.Syntax
-
 = Propositional Logic
 
 Propositional logic, or Boolean logic, is the logic of individual sentences and their compounds. Propositional logic is one of the most basic 
@@ -30,6 +28,10 @@ The semantics of propositional logic involves assigning meaning to the syntactic
 meaning of a propositional formula to be the meaning of a sentence, that is, a truth value. A structure which gives meaning to a language is called a model or an interpretation of the 
 language. For propositional logic, an interpretation \(I\) is an assignment of true or false to each propositional variable. Then, we define the meaning of compound formulae build up 
 out of the connectives with a recursive definition which matches the intuitive meaning of each connective:
+
+\[
+\text{An atomic formula} \: \ulcorner\phi\urcorner \: \textrm{is true iff} \: I \: \textrm{assigns} \: \ulcorner\phi\urcorner \: \textrm{true} 
+\]
 
 \[
 \ulcorner\lnot \: \phi\urcorner \: \textrm{is true iff} \: \ulcorner\phi\urcorner \: \textrm{is false}
