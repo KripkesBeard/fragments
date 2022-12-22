@@ -4,6 +4,8 @@ module Semantics.Logic.Quantificational.Semantics
       Domain
     , createDomain
       -- ** Relations
+    , RelationalTuples 
+    , createRelationalTuple
     , Relations
     , createRelations
       -- ** Interpretation
@@ -32,11 +34,19 @@ createDomain :: [String] -> Domain
 createDomain = Set.fromList
 
 
+-- | A relational tuple is a set of lists of quantificational terms
+type RelationalTuples = Set [QuantificationalTerm]
+
+-- | Create a RelationalTuple
+createRelationalTuple :: [[QuantificationalTerm]] -> RelationalTuples
+createRelationalTuple = Set.fromList 
+
+
 -- | Relations are the collections of objects satisfying them.
-type Relations = Map String (Set [QuantificationalTerm])
+type Relations = Map String RelationalTuples
 
 -- | Create a collection of relations.
-createRelations:: [(String, Set [QuantificationalTerm])] -> Relations
+createRelations:: [(String, RelationalTuples)] -> Relations
 createRelations = Map.fromList
 
 
@@ -60,7 +70,7 @@ createInterpretation = (,)
 --
 -- then 
 --
--- >>> evaluateIn (Universal $ \x -> (Disjunction (Predicate "InTheBlackLodge" x) (Equality x "Cooper"))) i
+-- >>> evaluateIn (Universal $ \x -> (Disjunction (Predicate "InTheBlackLodge" [x]) (Equality x "Cooper"))) i
 -- True
 --
 evaluateIn :: QuantificationalFormula -> Interpretation -> Bool

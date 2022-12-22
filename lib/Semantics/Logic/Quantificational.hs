@@ -139,6 +139,8 @@ module Semantics.Logic.Quantificational
     , Domain
     , createDomain
       -- *** Relations
+    , RelationalTuples 
+    , createRelationalTuple
     , Relations
     , createRelations
       -- *** Interpretation
@@ -156,6 +158,8 @@ import Semantics.Logic.Quantificational.Syntax
 import Semantics.Logic.Quantificational.Semantics 
     ( Domain
     , createDomain
+    , RelationalTuples 
+    , createRelationalTuple
     , Relations
     , createRelations
     , Interpretation
