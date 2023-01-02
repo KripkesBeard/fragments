@@ -95,12 +95,13 @@ is in the relation which \(I\) assigns to \(\ulcorner P^n \urcorner\)}
 \]
 
 \[
-\ulcorner \forall x \phi \urcorner \: \textrm{is true iff the formula \(\ulcorner \phi \urcorner\) is true for every object \(d \in D\) when every occurance of \(x\) in \(\phi\) is 
-replaced with a term denoting \(d\)}
+\ulcorner \forall x \phi \urcorner \: \textrm{is true iff the formula \(\ulcorner \phi \urcorner\) is true for every object \(d \in D\) when every occurance of \(x\) in 
+\(\ulcorner \phi \urcorner\) is replaced with a term denoting \(d\)}
 \]
 
 \[
-\ulcorner \exists x \phi \urcorner \: \textrm{is true iff the formula \(\ulcorner \phi \urcorner\) is true for at least one object \(d \in D\) when every occurance of \(x\) in \(\phi\) is replaced with a term denoting \(d\)}
+\ulcorner \exists x \phi \urcorner \: \textrm{is true iff the formula \(\ulcorner \phi \urcorner\) is true for at least one object \(d \in D\) when every occurance of \(x\) in 
+\(\ulcorner \phi \urcorner\) is replaced with a term denoting \(d\)}
 \]
 
 

@@ -43,11 +43,12 @@ library
                       Semantics.Logic.Quantificational
                       Semantics.Logic.Quantificational.Syntax
                       Semantics.Logic.Quantificational.Semantics
-                      --Semantics.Logic.QuantificationalModal
-                      --Semantics.Logic.QuantificationalModal.Syntax
-                      --Semantics.Logic.QuantificationalModal.Semantics
+                      Semantics.Logic.QuantificationalModal
+                      Semantics.Logic.QuantificationalModal.Syntax
+                      Semantics.Logic.QuantificationalModal.Semantics
                       --Semantics.Logic.TypeTheoretic
                       --Semantics.Logic.TypeTheoreticModal
+                      -- TODO: CHANGE Semantics.Hyperintesional to Semantics.Hyperintensions
 
 
     -- Modules included in this library but not exported.
@@ -55,11 +56,8 @@ library
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
-    build-depends:    base ^>=4.14.3.0
+    build-depends:    base >=4.14.3.0
                     , containers 
-                    , parsec 
-                    , parsec-numbers
-                    , mtl 
                       
     hs-source-dirs:   lib
     default-language: Haskell2010
@@ -70,4 +68,8 @@ test-suite fragments-test
     type:             exitcode-stdio-1.0
     hs-source-dirs:   test
     main-is:          MyLibTest.hs
-    build-depends:    base ^>=4.14.3.0
+    build-depends:    base >=4.14.3.0
+                    , tasty
+                    , tasty-hunit
+                    , tasty-quickcheck
+                    , fragments

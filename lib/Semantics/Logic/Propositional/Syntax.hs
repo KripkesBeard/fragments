@@ -20,16 +20,3 @@ data PropositionalFormula
     | Disjunction PropositionalFormula PropositionalFormula
     | Implication PropositionalFormula PropositionalFormula
     deriving (Eq, Show, Read)
-
-{-
-toString :: PropositionalFormula -> String
-toString (Atomic p)             = show p
-toString (Negation (Atomic p))  = "~" <> show p
-toString (Negation p)           = "~(" <> toString p <> ")"
-toString (Conjunction p q)      =  "(" <> toString p <> " /\\ " <> toString q <> ")"
-toString (Disjunction p q)      =  "(" <> toString p <> " \\/ " <> toString q <> ")"
-toString (Implication p q)      =  "(" <> toString p <> " => "  <> toString q <> ")"
-
-prettyPrint :: PropositionalFormula -> IO ()
-prettyPrint = putStrLn . toString
--}
