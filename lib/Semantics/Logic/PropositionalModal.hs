@@ -107,6 +107,7 @@ module Semantics.Logic.PropositionalModal
       -- *** Possible Worlds
       World
     , createWorld
+    , Worlds
     , createWorlds
     , -- *** Accessibility Relation
       AccessibilityRelation
@@ -135,6 +136,7 @@ import Semantics.Logic.PropositionalModal.Syntax
 import Semantics.Logic.PropositionalModal.Semantics 
     ( World
     , createWorld
+    , Worlds
     , createWorlds
     , AccessibilityRelation
     , createAccessibilityRelation

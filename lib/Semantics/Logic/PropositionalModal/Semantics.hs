@@ -8,6 +8,7 @@ module Semantics.Logic.PropositionalModal.Semantics
       -- ** Possible Worlds
       World
     , createWorld
+    , Worlds
     , createWorlds
     , -- ** Accessibility Relation
       AccessibilityRelation
@@ -45,6 +46,9 @@ type World = Int
 -- | Create a world.
 createWorld :: Int -> World
 createWorld = id
+
+-- | Worlds are a set of worlds.
+type Worlds = Set World
 
 -- | Create a set of worlds.
 createWorlds :: [World] -> Set World

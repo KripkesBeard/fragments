@@ -64,7 +64,7 @@ createInterpretation = (,)
 -- and relations
 --
 -- @
--- InTheBlackLodge = {Laura, BOB}
+-- InTheBlackLodge    = {Laura, BOB}
 -- InGlastonburyGrove = {Cooper}
 -- @
 --
@@ -74,7 +74,7 @@ createInterpretation = (,)
 -- True
 --
 evaluateIn :: QuantificationalFormula -> Interpretation -> Bool
-evaluateIn (Predicate f n)   i = n `Set.member` (snd i Map.! f)
+evaluateIn (Predicate f n)   i = (f `Map.member` snd i) && (n `Set.member` (snd i Map.! f))
 evaluateIn (Equality t1 t2)  i = (t1 `Set.member` fst i && t2 `Set.member` fst i) && (t1 == t2)
 evaluateIn (Negation p)      i = not (evaluateIn p i)
 evaluateIn (Conjunction p q) i = evaluateIn p i && evaluateIn q i
