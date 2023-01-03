@@ -68,8 +68,12 @@ test-suite fragments-test
     type:             exitcode-stdio-1.0
     hs-source-dirs:   test
     main-is:          MyLibTest.hs
+    other-modules:    Logic.Prop
+                    , Logic.PropModal
+                    , Logic.Quant
     build-depends:    base >=4.14.3.0
                     , tasty
                     , tasty-hunit
                     , tasty-quickcheck
+                    , QuickCheck
                     , fragments
