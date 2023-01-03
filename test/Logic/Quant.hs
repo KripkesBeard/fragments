@@ -310,4 +310,8 @@ unitTests = testGroup "Unit tests"
         exi5 = Existential $ \x ->
                    Predicate "LovesBlackCoffee" [x]
         exi6 :: QuantificationalFormula
-        exi6 = Existential $ \x -> Existential $ \y -> Conjunction (Predicate "Loves" [x, y]) (Predicate "Loves" [y, x])
+        exi6 = Existential $ \x -> 
+                   Existential $ \y -> 
+                       Conjunction 
+                           (Predicate "Loves" [x, y]) 
+                           (Predicate "Loves" [y, x])
