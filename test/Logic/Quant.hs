@@ -151,7 +151,7 @@ unitTests = testGroup "Unit tests"
     , H.testCase "Universal 1" $       --
         evaluateIn uni1 i H.@?= True   --
     , H.testCase "Universal  2" $      --
-        evaluateIn uni2 i H.@?= False   --
+        evaluateIn uni2 i H.@?= False  --
     , H.testCase "Universal  3" $      --
         evaluateIn uni3 i H.@?= False  --
     , H.testCase "Universal  4" $      --
@@ -175,7 +175,7 @@ unitTests = testGroup "Unit tests"
         evaluateIn exi5 i H.@?= False  --
     , H.testCase "Universal  6" $      --
         evaluateIn exi6 i H.@?= True   --
-    ---------------------------------------
+    -------------------------------------
     ]
     where 
         -- Predicates
